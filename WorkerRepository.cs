@@ -3,6 +3,7 @@ using Penguin.Messaging.Core;
 using Penguin.Persistence.Abstractions.Interfaces;
 using Penguin.Persistence.Repositories;
 using System;
+using System.Diagnostics.Contracts;
 using System.Linq;
 
 namespace Penguin.Workers.Repositories
@@ -12,7 +13,6 @@ namespace Penguin.Workers.Repositories
     /// </summary>
     public class WorkerRepository : KeyedObjectRepository<WorkerCompletion>
     {
-        #region Constructors
         /// <summary>
         /// Constructs a new instance of this repository
         /// </summary>
@@ -22,15 +22,16 @@ namespace Penguin.Workers.Repositories
         {
         }
 
-        #endregion Constructors
-
-        #region Methods
         /// <summary>
         /// Attempts to get the last time a worker was run
         /// </summary>
         /// <param name="workerType">The worker type to check for</param>
         /// <returns>The last time the worker was run</returns>
-        public DateTime GetLastRun(Type workerType) => this.GetLastRun(workerType.ToString());
+        public DateTime GetLastRun(Type workerType)
+        {
+            Contract.Requires(workerType != null);
+            return this.GetLastRun(workerType.ToString());
+        }
 
         /// <summary>
         /// Attempts to get the last time a worker was run
@@ -62,7 +63,11 @@ namespace Penguin.Workers.Repositories
         /// Sets the last run of the given type, to the current time
         /// </summary>
         /// <param name="workerType">The worker type to set</param>
-        public void SetLastRun(Type workerType) => this.SetLastRun(workerType.ToString());
+        public void SetLastRun(Type workerType)
+        {
+            Contract.Requires(workerType != null);
+            this.SetLastRun(workerType.ToString());
+        }
 
         /// <summary>
         /// Sets the last run of the given type, to the current time
@@ -76,7 +81,5 @@ namespace Penguin.Workers.Repositories
 
             this.AddOrUpdate(thisCompletion);
         }
-
-        #endregion Methods
     }
 }
