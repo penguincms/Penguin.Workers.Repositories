@@ -1,7 +1,7 @@
 ﻿using Penguin.Cms.Workers.Entities;
 using Penguin.Messaging.Core;
 using Penguin.Persistence.Abstractions.Interfaces;
-using Penguin.Persistence.Repositories;
+using Penguin.Persistence.Repositories.Repositories;
 using System;
 using System.Diagnostics.Contracts;
 using System.Linq;
@@ -42,21 +42,7 @@ namespace Penguin.Workers.Repositories
         {
             WorkerCompletion thisCompletion = this.Where(w => w.Name == typeString).OrderByDescending(w => w.DateCreated).FirstOrDefault();
 
-            DateTime toReturn = DateTime.MinValue;
-
-            if (thisCompletion != null)
-            {
-                if (thisCompletion.DateModified.HasValue)
-                {
-                    toReturn = thisCompletion.DateModified.Value;
-                }
-                else if (thisCompletion.DateCreated.HasValue)
-                {
-                    toReturn = thisCompletion.DateCreated.Value;
-                }
-            }
-
-            return toReturn;
+            return thisCompletion?.DateCreated ?? DateTime.MinValue;
         }
 
         /// <summary>
@@ -75,11 +61,7 @@ namespace Penguin.Workers.Repositories
         /// <param name="typeString">The worker type to set</param>
         public void SetLastRun(string typeString)
         {
-            WorkerCompletion thisCompletion = this.Where(w => w.Name == typeString).FirstOrDefault()
-                                              ?? new WorkerCompletion() { Name = typeString };
-            thisCompletion.DateModified = DateTime.Now;
-
-            this.AddOrUpdate(thisCompletion);
+            this.Add(new WorkerCompletion() { Name = typeString });
         }
     }
 }
