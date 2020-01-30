@@ -6,6 +6,7 @@
     <Description>IRepository implementation for tracking worker startup-shutdowns and other meta information not related to logging</Description>
     <AssemblyName>Penguin.Workers.Repositories</AssemblyName>
     <RootNamespace>Penguin.Workers.Repositories</RootNamespace>
+    <DocumentationFile>Penguin.Workers.Repositories.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.4">
