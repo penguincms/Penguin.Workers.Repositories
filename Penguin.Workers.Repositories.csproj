@@ -13,8 +13,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Penguin.Cms.Workers.Entities" Version="5.0.1-T9ZCSSJ" />
-    <PackageReference Include="Penguin.Cms.Repositories" Version="5.0.1-T9ZCSSJ" />
+    <PackageReference Include="Penguin.Cms.Workers.Entities" Version="5.0.1-T9ZTQVZ" />
+    <PackageReference Include="Penguin.Cms.Repositories" Version="5.0.1-T9ZTQVZ" />
   </ItemGroup>
   <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
 </Project>
