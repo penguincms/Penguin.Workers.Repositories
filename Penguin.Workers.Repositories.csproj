@@ -10,7 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Penguin.Cms.Workers.Entities" Version="5.0.1-TA2OIRX" />
-    <PackageReference Include="Penguin.Cms.Repositories" Version="5.0.1-TA2OIRX" />
+    <PackageReference Include="Penguin.Cms.Repositories" Version="5.0.1-TA2UU2Y" />
   </ItemGroup>
   <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
 </Project>
