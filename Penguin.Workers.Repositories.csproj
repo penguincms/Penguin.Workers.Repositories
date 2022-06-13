@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0</TargetFrameworks>
-    <PackageProjectUrl>https://github.com/PenguinCms/Penguin.Workers.Repositories</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/PenguinCMS/Penguin.Workers.Repositories</PackageProjectUrl>
     <Version>5.0.5</Version>
     <Description>IRepository implementation for tracking worker startup-shutdowns and other meta information not related to logging</Description>
     <AssemblyName>Penguin.Workers.Repositories</AssemblyName>
@@ -9,8 +9,8 @@
     <DocumentationFile>Penguin.Workers.Repositories.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Penguin.Cms.Workers.Entities" Version="5.0.6-TAX9354" />
-    <PackageReference Include="Penguin.Cms.Repositories" Version="5.0.6-TAX9354" />
+    <PackageReference Include="Penguin.Cms.Workers.Entities" Version="5.0.6-TAZCES9" />
+    <PackageReference Include="Penguin.Cms.Repositories" Version="5.0.6-TAZCES9" />
   </ItemGroup>
   <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
 </Project>
