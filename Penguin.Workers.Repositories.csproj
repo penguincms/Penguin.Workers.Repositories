@@ -9,8 +9,8 @@
     <DocumentationFile>Penguin.Workers.Repositories.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Penguin.Cms.Workers.Entities" Version="5.0.6-TAZCES9" />
-    <PackageReference Include="Penguin.Cms.Repositories" Version="5.0.6-TAZCES9" />
+    <PackageReference Include="Penguin.Cms.Workers.Entities" Version="5.0.6-TB0DVI6" />
+    <PackageReference Include="Penguin.Cms.Repositories" Version="5.0.6-TB0DVI6" />
   </ItemGroup>
   <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
 </Project>
