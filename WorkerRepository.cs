@@ -30,7 +30,7 @@ namespace Penguin.Workers.Repositories
         public DateTime GetLastRun(Type workerType)
         {
             Contract.Requires(workerType != null);
-            return this.GetLastRun(workerType.ToString());
+            return GetLastRun(workerType.ToString());
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Penguin.Workers.Repositories
         public void SetLastRun(Type workerType)
         {
             Contract.Requires(workerType != null);
-            this.SetLastRun(workerType.ToString());
+            SetLastRun(workerType.ToString());
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Penguin.Workers.Repositories
         /// <param name="typeString">The worker type to set</param>
         public void SetLastRun(string typeString)
         {
-            this.Add(new WorkerCompletion() { Name = typeString });
+            Add(new WorkerCompletion() { Name = typeString });
         }
     }
 }
